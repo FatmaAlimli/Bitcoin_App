@@ -6,5 +6,5 @@
         android:color="@color/colorPrimaryDark" />
     <item
         android:state_checked="false"
-        android:color="@color/colorAccent" />
+        android:color="@color/colorPrimaryDark" />
 </selector>

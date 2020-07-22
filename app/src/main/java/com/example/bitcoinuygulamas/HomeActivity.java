@@ -26,6 +26,7 @@ public class HomeActivity extends AppCompatActivity {
         tanimla();
         istek();
 
+
     }
 
 

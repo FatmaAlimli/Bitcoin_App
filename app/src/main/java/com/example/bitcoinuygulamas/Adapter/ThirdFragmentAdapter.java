@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bitcoinuygulamas.Models.CoinsItem;
 import com.example.bitcoinuygulamas.R;
-import com.example.bitcoinuygulamas.ThirdFragment;
+import com.example.bitcoinuygulamas.CoinHistoryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +20,12 @@ import java.util.List;
 public class ThirdFragmentAdapter extends RecyclerView.Adapter<ThirdFragmentAdapter.ViewHolder> {
     List<CoinsItem> list = new ArrayList<>();
     Context context;
-    ThirdFragment activity;
-    ThirdFragment fragment;
+    CoinHistoryFragment activity;
+    CoinHistoryFragment fragment;
     String id;
 
 
-    public ThirdFragmentAdapter(Context context, ThirdFragment activity) {
+    public ThirdFragmentAdapter(Context context, CoinHistoryFragment activity) {
         this.activity = activity;
         this.context = context;
         // this.fragment = fragment;

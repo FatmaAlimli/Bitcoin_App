@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.example.bitcoinuygulamas.Models.CoinsItem;
 import com.example.bitcoinuygulamas.Models.Response2;
 
-public class FirstFragment extends Fragment {
+public class CoinProfilFragment extends Fragment {
 
     public Response2 list;
     String id;

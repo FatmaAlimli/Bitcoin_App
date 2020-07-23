@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.bitcoinuygulamas.FirstFragment;
-import com.example.bitcoinuygulamas.SecondFragment;
-import com.example.bitcoinuygulamas.ThirdFragment;
+import com.example.bitcoinuygulamas.CoinProfilFragment;
+import com.example.bitcoinuygulamas.CoinSocialFragment;
+import com.example.bitcoinuygulamas.CoinHistoryFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +23,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         this.totalTabs = totalTabs;
         myContext = context;
-        fragments.add(new FirstFragment());
-        fragments.add(new SecondFragment());
-        fragments.add(new ThirdFragment());
+        fragments.add(new CoinProfilFragment());
+        fragments.add(new CoinSocialFragment());
+        fragments.add(new CoinHistoryFragment());
 
     }
 

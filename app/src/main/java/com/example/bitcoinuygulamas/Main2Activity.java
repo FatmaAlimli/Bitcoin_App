@@ -50,9 +50,9 @@ public class Main2Activity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-               ((FirstFragment) adapter.getItem(0) ).update(liste, id);
-                ((SecondFragment) adapter.getItem(1)).update(liste, id);
-                ((ThirdFragment) adapter.getItem(2)).update(liste, id );
+               ((CoinProfilFragment) adapter.getItem(0) ).update(liste, id);
+                ((CoinSocialFragment) adapter.getItem(1)).update(liste, id);
+                ((CoinHistoryFragment) adapter.getItem(2)).update(liste, id );
             }
 
             @Override
@@ -89,9 +89,9 @@ public class Main2Activity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     liste = response.body();
 
-                    ((FirstFragment) adapter.getItem(0) ).update(liste,id);
-                    ((SecondFragment) adapter.getItem(1)).update(liste,id);
-                    ((ThirdFragment) adapter.getItem(2)).update(liste,id );
+                    ((CoinProfilFragment) adapter.getItem(0) ).update(liste,id);
+                    ((CoinSocialFragment) adapter.getItem(1)).update(liste,id);
+                    ((CoinHistoryFragment) adapter.getItem(2)).update(liste,id );
                    // FirstFragment firstFragmentt = new ((FirstFragment) adapter.getItem(0) ).update(liste);FirstFragment();
                    //firstFragment.update(response.body());
                     //adapter.update(0, liste);

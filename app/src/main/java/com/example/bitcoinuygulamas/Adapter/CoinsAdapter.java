@@ -1,6 +1,5 @@
 package com.example.bitcoinuygulamas.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -21,12 +20,13 @@ import com.example.bitcoinuygulamas.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.MyViewHolder> {
     List<CoinsItem> list = new ArrayList<>();
     Context context;
-    Activity activity;
+    ActivityOwner activity;
 
-    public CoinsAdapter(Context context, Activity activity) {
+    public CoinsAdapter(Context context, ActivityOwner activity) {
         this.context = context;
         this.activity = activity;
     }
@@ -49,10 +49,10 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.MyViewHolder
         holder.layoutList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity, Main2Activity.class);
+                Intent intent = new Intent(activity.getActivityOwner(), Main2Activity.class);
                 String Id = String.valueOf(list.get(position).getId());
                 intent.putExtra("id", Id);
-                activity.startActivity(intent);
+                activity.getActivityOwner().startActivity(intent);
             }
         });
     }
@@ -61,6 +61,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.MyViewHolder
     public int getItemCount() {
         return list.size();
     }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -94,7 +95,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.MyViewHolder
                 }
             }
 
-            Utils.fetchSvg(activity, list.getIconUrl(), imageView);
+            Utils.fetchSvg(activity.getActivityOwner(), list.getIconUrl(), imageView);
 
         }
     }

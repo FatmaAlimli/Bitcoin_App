@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bitcoinuygulamas.Adapter.ThirdFragmentAdapter;
 import com.example.bitcoinuygulamas.Models.Response2;
 
-public class ThirdFragment extends Fragment {
+public class CoinHistoryFragment extends Fragment {
 
     public Response2 list;
     String id;
@@ -38,7 +38,7 @@ public class ThirdFragment extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        thirdFragmentAdapter = new ThirdFragmentAdapter(getContext(), ThirdFragment.this);
+        thirdFragmentAdapter = new ThirdFragmentAdapter(getContext(), CoinHistoryFragment.this);
         recyclerView.setAdapter(thirdFragmentAdapter);
         thirdFragmentAdapter.setList(list.getData().getCoins(), id);
         System.out.println();

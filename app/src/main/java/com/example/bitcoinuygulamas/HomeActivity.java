@@ -1,61 +1,64 @@
 package com.example.bitcoinuygulamas;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.example.bitcoinuygulamas.Adapter.CoinsAdapter;
-import com.example.bitcoinuygulamas.Models.Response2;
-import com.example.bitcoinuygulamas.RestApi.ManagerAll;
+import com.example.bitcoinuygulamas.Adapter.ActivityOwner;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+public class HomeActivity extends AppCompatActivity implements ActivityOwner {
 
-public class HomeActivity extends AppCompatActivity {
-    CoinsAdapter coinsAdapter;
-    RecyclerView recyclerView;
-    LinearLayoutManager linearLayoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        tanimla();
-        istek();
+        setContentView(R.layout.home);
 
 
-    }
-
-
-    public void tanimla() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        loadFragment(new StartFragment(this));
 
     }
 
-    public void istek() {
-        Call<Response2> bilgiList = ManagerAll.getInstance().getirBilgileri();
-        bilgiList.enqueue((new Callback<Response2>() {
-            @Override
-            public void onResponse(Call<Response2> call, Response<Response2> response) {
-                if (response.isSuccessful()) {
-                    coinsAdapter = new CoinsAdapter(getApplicationContext(), HomeActivity.this);
-                    recyclerView.setAdapter(coinsAdapter);
-                    coinsAdapter.setList(response.body().getData().getCoins());
-                }
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+            switch (item.getItemId()) {
+                case R.id.page_1:
+                    selectedFragment = new StartFragment(HomeActivity.this);
+                    break;
+                case R.id.page_2:
+                    selectedFragment = new ProfilFragment();
+                    break;
 
             }
+            loadFragment(selectedFragment);
+            return true;
+        }
+    };
 
-            @Override
-            public void onFailure(Call<Response2> call, Throwable t) {
-                    if (true) return;
-            }
-        }));
+    private void loadFragment(Fragment fragment) { //fragmentlarımızı çağırdığımız fonksiyon
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.mainFrameLayout, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+
+    @Override
+    public Activity getActivityOwner() {
+        return this;
     }
 }

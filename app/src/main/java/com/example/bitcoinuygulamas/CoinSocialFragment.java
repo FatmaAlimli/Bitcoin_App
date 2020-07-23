@@ -21,7 +21,7 @@ import com.example.bitcoinuygulamas.Models.Response2;
 
 import java.util.ArrayList;
 
-public class SecondFragment extends Fragment {
+public class CoinSocialFragment extends Fragment {
     public Response2 list;
     String id;
     View view;

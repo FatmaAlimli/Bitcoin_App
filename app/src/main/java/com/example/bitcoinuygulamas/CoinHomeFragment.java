@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class StartFragment extends Fragment implements ActivityOwner {
+public class CoinHomeFragment extends Fragment implements ActivityOwner {
 
     public Response2 list;
     View view;
@@ -32,14 +32,14 @@ public class StartFragment extends Fragment implements ActivityOwner {
 
     ActivityOwner activity;
 
-    public StartFragment(ActivityOwner activity){
+    public CoinHomeFragment(ActivityOwner activity){
         super();
         this.activity = activity;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.start_fragment, container, false);
+        View view = inflater.inflate(R.layout.coin_home_fragment, container, false);
 
         return view;
     }

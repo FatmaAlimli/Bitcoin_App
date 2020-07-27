@@ -40,7 +40,7 @@ public class ThirdFragmentAdapter extends RecyclerView.Adapter<ThirdFragmentAdap
     @NonNull
     @Override
     public ThirdFragmentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.third_fragment_layout, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.coin_history_fragment_layout, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }

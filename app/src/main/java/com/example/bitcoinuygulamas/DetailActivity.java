@@ -14,7 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Main2Activity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
 
     String id;
     Response2 liste;
@@ -26,7 +26,7 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.detail_activity);
 
         al();
         istek();

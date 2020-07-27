@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <LinearLayout
-        android:id="@+id/layoutListThird"
+        android:id="@+id/layoutListNews"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:clickable="true"
         android:orientation="horizontal"
-        android:paddingLeft="10dp">
+        android:clickable="true"
+        android:layout_marginTop="5dp">
+
         <TextView
-            android:id="@+id/history"
+            android:id="@+id/coinNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="30sp"/>
+
+
+
     </LinearLayout>
 
 </LinearLayout>

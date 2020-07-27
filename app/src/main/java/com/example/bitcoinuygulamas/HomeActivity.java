@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFragment(new StartFragment(this));
+        loadFragment(new CoinHomeFragment(this));
 
     }
 
@@ -36,10 +36,14 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.page_1:
-                    selectedFragment = new StartFragment(HomeActivity.this);
+                    selectedFragment = new CoinHomeFragment(HomeActivity.this);
                     break;
                 case R.id.page_2:
-                    selectedFragment = new ProfilFragment();
+                    selectedFragment = new CoinNewsFragment();
+                    break;
+
+                case R.id.page_3:
+                    selectedFragment = new UserProfilFragment();
                     break;
 
             }

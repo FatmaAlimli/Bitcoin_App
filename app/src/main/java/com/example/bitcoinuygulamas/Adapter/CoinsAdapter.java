@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bitcoinuygulamas.Main2Activity;
+import com.example.bitcoinuygulamas.DetailActivity;
 import com.example.bitcoinuygulamas.Models.CoinsItem;
 import com.example.bitcoinuygulamas.R;
 import com.example.bitcoinuygulamas.Utils;
@@ -49,7 +49,7 @@ public class CoinsAdapter extends RecyclerView.Adapter<CoinsAdapter.MyViewHolder
         holder.layoutList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity.getActivityOwner(), Main2Activity.class);
+                Intent intent = new Intent(activity.getActivityOwner(), DetailActivity.class);
                 String Id = String.valueOf(list.get(position).getId());
                 intent.putExtra("id", Id);
                 activity.getActivityOwner().startActivity(intent);

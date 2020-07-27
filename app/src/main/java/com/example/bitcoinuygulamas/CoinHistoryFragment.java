@@ -26,7 +26,7 @@ public class CoinHistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.third_fragment, container, false);
+        View view = inflater.inflate(R.layout.coin_history_fragment, container, false);
         return view;
     }
 

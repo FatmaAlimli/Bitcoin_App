@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">BitcoinUygulaması</string>
-    <string name="symbol">Symbol</string>
+    <string name="symbol">Kripto Para</string>
     <string name="coin">Coin</string>
-    <string name="price">Price</string>
+    <string name="price">Fiyat</string>
     <string name="name">NAMEE</string>
 
 

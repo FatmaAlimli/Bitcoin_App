@@ -55,9 +55,11 @@ public class CoinSocialFragment extends Fragment {
     public void update(Response2 list, String id) {
         this.list = list;
         this.id = id;
+        String url = "https://github.com/bitcoin/bitcoin";
         System.out.println();
         for (CoinsItem item : list.getData().getCoins()) {
             if (item.getId() == Integer.parseInt(id)) {
+
 
                 ArrayList<String> listItem = new ArrayList<String>();
 
@@ -66,9 +68,12 @@ public class CoinSocialFragment extends Fragment {
                 listItem.add(item.getLinks().get(2).getName());
                 listItem.add(item.getLinks().get(3).getName());
 
+
                 final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
                         android.R.layout.simple_list_item_1, android.R.id.text1, listItem);
                 listView.setAdapter(adapter);
+
+
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

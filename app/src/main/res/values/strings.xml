@@ -4,6 +4,12 @@
     <string name="coin">Coin</string>
     <string name="price">Fiyat</string>
     <string name="name">NAMEE</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="connect_to_internet"></string>
+    <string name="nav_header_desc">Hoşgeldiniz</string>
+    <string name="Open">Açık</string>
+    <string name="Close">Kapalı</string>
 
 
 </resources>

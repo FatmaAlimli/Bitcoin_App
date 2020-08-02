@@ -24,7 +24,6 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
         loadFragment(new CoinHomeFragment(this));
 
     }

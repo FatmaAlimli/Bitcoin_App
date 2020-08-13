@@ -31,18 +31,17 @@ public class DetailActivity extends AppCompatActivity {
         al();
         istek();
 
-        tabLayout = (TabLayout)findViewById(R.id.tabLayout);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
         for (int i = 0; i < 3; i++) {
             tabLayout.addTab(tabLayout.newTab().setText(pageTitle[i]));
-    }
+        }
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
         viewPager = findViewById(R.id.viewPager);
         //Adapterimize Fragmentlerimizi yerleştiriyoruz
 
-        adapter = new ViewPagerAdapter(this,getSupportFragmentManager(), tabLayout.getTabCount());
+        adapter = new ViewPagerAdapter(this, getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);  //viewPager'e adapteri baplıyoruz
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -50,9 +49,9 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-               ((CoinProfilFragment) adapter.getItem(0) ).update(liste, id);
+                ((CoinProfilFragment) adapter.getItem(0)).update(liste, id);
                 ((CoinSocialFragment) adapter.getItem(1)).update(liste, id);
-                ((CoinHistoryFragment) adapter.getItem(2)).update(liste, id );
+                ((CoinHistoryFragment) adapter.getItem(2)).update(liste, id);
             }
 
             @Override
@@ -70,10 +69,7 @@ public class DetailActivity extends AppCompatActivity {
                 tanimla();
             }
         });*/
-
-
     }
-
 
     public void al() {
         Bundle bundle = getIntent().getExtras();
@@ -84,23 +80,21 @@ public class DetailActivity extends AppCompatActivity {
     public void istek() {
         Call<Response2> call = ManagerAll.getInstance().managerGetResult(id);
         call.enqueue(new Callback<Response2>() {
-                @Override
-                public void onResponse(Call<Response2> call, Response<Response2> response) {
+            @Override
+            public void onResponse(Call<Response2> call, Response<Response2> response) {
                 if (response.isSuccessful()) {
                     liste = response.body();
 
-                    ((CoinProfilFragment) adapter.getItem(0) ).update(liste,id);
-                    ((CoinSocialFragment) adapter.getItem(1)).update(liste,id);
-                    ((CoinHistoryFragment) adapter.getItem(2)).update(liste,id );
-                   // FirstFragment firstFragmentt = new ((FirstFragment) adapter.getItem(0) ).update(liste);FirstFragment();
-                   //firstFragment.update(response.body());
+                    ((CoinProfilFragment) adapter.getItem(0)).update(liste, id);
+                    ((CoinSocialFragment) adapter.getItem(1)).update(liste, id);
+                    ((CoinHistoryFragment) adapter.getItem(2)).update(liste, id);
+                    // FirstFragment firstFragmentt = new ((FirstFragment) adapter.getItem(0) ).update(liste);
+                    //firstFragment.update(response.body());
                     //adapter.update(0, liste);
 
-                    //int a = liste.getData().getCoins().size();
                     //nameTV.setText(liste.getData().getCoins().get(0).getName());
                     //atama(liste);
-                    //descriptionTextView = (TextView) findViewById(R.id.description);
-                    //descriptionTextView.setText(liste.getData().getCoins().get(0).getDescription());
+
                 }
             }
 
@@ -110,7 +104,6 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
 }

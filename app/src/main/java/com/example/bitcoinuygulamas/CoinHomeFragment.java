@@ -32,7 +32,7 @@ public class CoinHomeFragment extends Fragment implements ActivityOwner {
 
     ActivityOwner activity;
 
-    public CoinHomeFragment(ActivityOwner activity){
+    public CoinHomeFragment(ActivityOwner activity) {
         super();
         this.activity = activity;
     }
@@ -68,12 +68,9 @@ public class CoinHomeFragment extends Fragment implements ActivityOwner {
             public void onResponse(Call<Response2> call, Response<Response2> response) {
                 if (response.isSuccessful()) {
                     coinsAdapter = new CoinsAdapter(getContext(), activity);
-
                     recyclerView.setAdapter(coinsAdapter);
                     coinsAdapter.setList(response.body().getData().getCoins());
                 }
-
-
             }
 
             @Override

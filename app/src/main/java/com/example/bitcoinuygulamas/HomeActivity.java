@@ -31,11 +31,10 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        setTitle("Anasayfa");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.Open, R.string.Close);
         drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        toggle.syncState(); //drawerlayout senkronizasyon işlemleri için kullanılmakta
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -61,8 +60,6 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
             }
 
         });
-        //navigationView.setNavigationItemSelectedListener(this);
-
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -101,9 +98,6 @@ public class HomeActivity extends AppCompatActivity implements ActivityOwner {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener

@@ -6,15 +6,15 @@
         <item
             android:id="@+id/description"
             android:icon="@mipmap/ic_launcher"
-            android:title="Tanımlar" />
+            android:title="Blabla" />
         <item
             android:id="@+id/transactions"
             android:icon="@mipmap/ic_launcher"
-            android:title="İşlemler" />
+            android:title="Blabla" />
         <item
             android:id="@+id/reports"
             android:icon="@mipmap/ic_launcher"
-            android:title="Raporlar" />
+            android:title="Blabla" />
 
     </group>
 </menu>

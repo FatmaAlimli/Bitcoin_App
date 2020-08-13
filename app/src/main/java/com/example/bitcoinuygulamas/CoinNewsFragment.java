@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -17,7 +16,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 public class CoinNewsFragment extends Fragment {
 
     View view;
-    TextView titleTextView;
     private String url = "https://www.coindesk.com";
     private WebView webView;
     private ProgressBar progressBar;
@@ -35,16 +33,12 @@ public class CoinNewsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         this.view = view;
 
-
         webView = view.findViewById(R.id.web_view);
         progressBar = view.findViewById(R.id.progress_circular);
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
 
         webView.getSettings().setJavaScriptEnabled(true);
-
-
         webView.loadUrl(url);
-
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 
             @Override
@@ -67,7 +61,6 @@ public class CoinNewsFragment extends Fragment {
                 super.onPageFinished(view, url);
                 webView.setVisibility(View.VISIBLE);
 
-
                 if (swipeRefreshLayout.isRefreshing()) {
                     swipeRefreshLayout.setRefreshing(false);
                 }
@@ -76,11 +69,6 @@ public class CoinNewsFragment extends Fragment {
                     progressBar.setVisibility(View.GONE);
                 }
             }
-
-
         });
-
     }
-
-
 }
